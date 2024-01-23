@@ -1,0 +1,32 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Position
+{
+    public int X { get; set; }
+    public int Y { get; set; }
+
+    public Position(int x, int y)
+    {
+        X = x;
+        Y = y;
+    }
+
+    public Position() : this(0, 0) { }
+
+    public override string ToString()
+    {
+        return string.Format("({0}, {1})", X, Y);
+    }
+
+    public override bool Equals(object obj)
+    {
+        return Equals(obj as Position);
+    }
+
+    public bool Equals(Position other)
+    {
+        return (other != null) && (this.X == other.X) && (this.Y == other.Y);
+    }
+}
